@@ -8,3 +8,4 @@ dataclasses==0.7
 xlrd==1.2.0
 openpyxl==3.0.0
 selenium==3.8.0
+pymongo==3.9.0
