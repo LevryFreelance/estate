@@ -1,0 +1,10 @@
+Flask==1.1.1
+pandas==0.25.2
+schedule==0.6.0
+gunicorn==19.9.0
+requests==2.22.0
+beautifulsoup4==4.8.1
+dataclasses==0.7
+xlrd==1.2.0
+openpyxl==3.0.0
+selenium==3.8.0
