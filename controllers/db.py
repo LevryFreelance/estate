@@ -1,5 +1,4 @@
 import pymongo
-import dns
 
 
 client = pymongo.MongoClient("mongodb+srv://sasha_kuprii:K04u02p20r04ii@estate-q9wuv.mongodb.net/test?retryWrites=true&w=majority")
