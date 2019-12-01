@@ -1,3 +1,6 @@
+import sys
+sys.path.append("..")
+
 import re
 
 from selenium import webdriver
@@ -12,14 +15,14 @@ from controllers import db
 
 driver = webdriver.PhantomJS()
 data = [
-          ('flats', 'buy', 'http://latio.lv/en/properties?object_group=apartments&client_activity=to_buy'),
-        ('flats', 'rent', 'http://latio.lv/en/properties?object_group=apartments&client_activity=to_rent'),
-        ('houses', 'buy', 'http://latio.lv/en/properties?object_group=houses&client_activity=to_buy'),
-        ('houses', 'rent', 'http://latio.lv/en/properties?object_group=houses&client_activity=to_rent'),
-        ('land', 'buy', 'http://latio.lv/en/properties?object_group=land&client_activity=to_buy'),
-        ('land', 'lease', 'http://latio.lv/en/properties?object_group=land&client_activity=to_rent'),
-        ('commercial', 'buy', 'http://latio.lv/en/properties?object_group=commercial_spaces&client_activity=to_buy'),
-        ('commercial', 'lease', 'http://latio.lv/en/properties?object_group=commercial_spaces&client_activity=to_rent')
+          ('Dzīvokļi', 'Pārdod', 'http://latio.lv/lv/ipasumi?object_group=apartments&client_activity=to_buy'),
+        ('Dzīvokļi', 'Īrē', 'http://latio.lv/lv/ipasumi?object_group=apartments&client_activity=to_rent'),
+        ('Mājas', 'Pārdod', 'http://latio.lv/lv/ipasumi?object_group=houses&client_activity=to_buy'),
+        ('Mājas', 'Īrē', 'http://latio.lv/lv/ipasumi?object_group=houses&client_activity=to_rent'),
+        ('Zeme', 'Pārdod', 'http://latio.lv/lv/ipasumi?object_group=land&client_activity=to_buy'),
+        ('Zeme', 'Īrē', 'http://latio.lv/lv/ipasumi?object_group=land&client_activity=to_rent'),
+        ('Komercīpašumi', 'Pārdod', 'http://latio.lv/lv/ipasumi?object_group=commercial_spaces&client_activity=to_buy'),
+        ('Komercīpašumi', 'Īrē', 'http://latio.lv/lv/ipasumi?object_group=commercial_spaces&client_activity=to_rent')
         ]
 
 
@@ -27,6 +30,7 @@ data = [
 def get_all_links():
     res = set()
     for estate in data:
+        print(estate, len(res))
         for page in range(1, 100000):
             url = estate[2] + f'&page={page}'
             # html = Soup(requests.get(url).text, features='html.parser')
@@ -105,16 +109,16 @@ def parse_one(link):
     try:
         details = [x.text.strip() for x in html.select('#content .details .feature')]
         for det in details:
-            if 'room' in det:
+            if 'istaba' in det:
                 room = int(det.split()[0])
 
-            if 'floor' in det:
+            if 'stāvs' in det:
                 floor = int(det.split()[0].replace('.', ''))
 
-            if 'm²' in det and 'land' not in det:
+            if 'm²' in det and 'zeme' not in det:
                 area = float(det.split()[0])
 
-            if 'land' in det:
+            if 'zeme' in det:
                 land = float(det.split()[0])
 
     except Exception:
@@ -151,7 +155,7 @@ def to_excel(data):
     df = pd.DataFrame(data)
 
     print(df)
-    headers = ['year', 'month', 'country', 'resource', 'deal_type', 'property_type', 'city_region', 'district', 'street', 'volost',
+    headers = ['parsing_date', 'year', 'month', 'country', 'resource', 'deal_type', 'property_type', 'city_region', 'district', 'street', 'volost',
                'village', 'price', 'price_m2', 'area', 'ground_area', 'room_number', 'floor_number',
                'count_of_floors', 'kad_number', 'series', 'house_type', 'facilities', 'purpose', 'link']
 
@@ -165,7 +169,6 @@ def unique(data):
         if x[0] not in exist_links:
             unique.append(x)
     return unique
-
 
 
 def main():

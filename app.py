@@ -34,7 +34,6 @@ def merge_dfs(df):
     pd.concat([df, df_all]).to_excel('tables/estate.xlsx', index=False)
 
 
-
 def split_table_to_countries():
     df = pd.read_excel('tables/estate.xlsx')
 
@@ -58,26 +57,14 @@ def refresh_tables():
     if latio is not None:
         db.save(latio, 'latvia')
 
-
-    # del ss
-    #
-    # for x in mm_controller():
-    #     array.append(x)
-    # # for x in latio_controller():
-    # #     print(x)
-    # #     array.append(x)
-    # # print(pd.DataFrame(array))
-    #
-    # df = pd.DataFrame(array)
-    # save_daily(df)
-    # merge_dfs(df)
+    requests.post('https://estate-lv.herokuapp.com/create_tables')
 
     print('Finished refresh')
 
 
 def sched():
     print(2)
-    schedule.every().day.at('20:39').do(refresh_tables)
+    schedule.every().day.at('13:20').do(refresh_tables)
     # threading.Thread(target=refresh_tables).start()
     def s():
         while True:
@@ -85,22 +72,7 @@ def sched():
     threading.Thread(target=s).start()
 
 
-def send_req():
-    requests.get('https://estate-lv.herokuapp.com/test')
-    time.sleep(60)
-    return send_req()
 
-
-def start_runner():
-    if 'False' in open('check.txt').read():
-        threading.Thread(target=sched).start()
-        threading.Thread(target=send_req).start()
-        open('check.txt', 'w').write('True')
-    else:
-        pass
-
-    # thread = threading.Thread(target=start_loop)
-    # thread.start()
 
 
 if __name__ == '__main__':

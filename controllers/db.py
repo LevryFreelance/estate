@@ -1,7 +1,8 @@
 import pymongo
+from os import environ
 
 
-client = pymongo.MongoClient("mongodb+srv://sasha_kuprii:K04u02p20r04ii@estate-q9wuv.mongodb.net/test?retryWrites=true&w=majority")
+client = pymongo.MongoClient(environ.get('CONNECTION_STRING'))
 db = client.Estate
 
 
@@ -22,3 +23,4 @@ def save(data, country):
 
 if __name__ == '__main__':
     pass
+
