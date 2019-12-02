@@ -9,6 +9,7 @@ import datetime
 import pandas as pd
 import re
 from controllers import db
+from controllers.format_series import format_series
 
 
 data = [
@@ -128,6 +129,7 @@ def parse_one(url):
     try:
         if len(parse_result.series.split()) > 1:
             parse_result.series = ' '.join(parse_result.series.split()[:-1])
+        parse_result.series = format_series(parse_result.series)
     except Exception:
         pass
 
@@ -139,16 +141,16 @@ def parse_one(url):
         if ':' in date:
             parse_result.year = datetime.datetime.now().year
             parse_result.month = datetime.datetime.now().month
+            parse_result.day = datetime.datetime.now().day
         else:
             date = date.split('/')
             parse_result.year = int(date[2])
             parse_result.month = int(date[1])
+            parse_result.day = int(date[0])
     except Exception:
         pass
 
     parse_result.link = url
-    parse_result.parsing_date = datetime.datetime(datetime.datetime.now().year, datetime.datetime.now().month, datetime.datetime.now().day)
-    # print(parse_result)
     return parse_result
 
 
@@ -181,7 +183,7 @@ def to_excel(data):
     df = pd.DataFrame(data)
 
     print(df)
-    headers = ['parsing_date', 'year', 'month', 'country', 'resource', 'deal_type', 'property_type', 'city_region', 'district', 'street', 'volost',
+    headers = ['year', 'month', 'day', 'country', 'resource', 'deal_type', 'property_type', 'city_region', 'district', 'street', 'volost',
                'village', 'price', 'price_m2', 'area', 'ground_area', 'room_number', 'floor_number',
                'count_of_floors', 'kad_number', 'series', 'house_type', 'facilities', 'purpose', 'link']
 
@@ -217,6 +219,6 @@ if __name__ == '__main__':
 
     res = process_links(links)
 
-    # db.save(res, 'latvia')
-    to_excel(res)
+    db.save(res, 'latvia')
+    # to_excel(res)
 

@@ -26,7 +26,6 @@ data = [
         ]
 
 
-
 def get_all_links():
     res = set()
     for estate in data:
@@ -77,8 +76,6 @@ def process_links(links):
         parse_result = parse_one(estate[0])
         parse_result.property_type = estate[1]
         parse_result.deal_type = estate[2]
-        parse_result.parsing_date = datetime.datetime(datetime.datetime.now().year, datetime.datetime.now().month,
-                                                      datetime.datetime.now().day)
 
         res.append(parse_result.to_list())
 
@@ -134,7 +131,7 @@ def parse_one(link):
     except Exception:
         price_m2 = None
 
-    return Estate(year=datetime.datetime.now().year, month=datetime.datetime.now().month, country='LV', resource='latio.lv', city_region=city_region, district=district, street=street, room_number=room, floor_number=floor, area=area, ground_area=land, price=price, price_m2=price_m2, link=link)
+    return Estate(year=datetime.datetime.now().year, month=datetime.datetime.now().month, day=datetime.datetime.now().day, country='LV', resource='latio.lv', city_region=city_region, district=district, street=street, room_number=room, floor_number=floor, area=area, ground_area=land, price=price, price_m2=price_m2, link=link)
 
 
 def pretty_value(x):
@@ -155,7 +152,7 @@ def to_excel(data):
     df = pd.DataFrame(data)
 
     print(df)
-    headers = ['parsing_date', 'year', 'month', 'country', 'resource', 'deal_type', 'property_type', 'city_region', 'district', 'street', 'volost',
+    headers = ['year', 'month', 'day', 'country', 'resource', 'deal_type', 'property_type', 'city_region', 'district', 'street', 'volost',
                'village', 'price', 'price_m2', 'area', 'ground_area', 'room_number', 'floor_number',
                'count_of_floors', 'kad_number', 'series', 'house_type', 'facilities', 'purpose', 'link']
 
@@ -195,5 +192,5 @@ if __name__ == '__main__':
     print('Processing links...')
     res = process_links(links)
 
-    to_excel(res)
-
+    # to_excel(res)
+    db.save(res, 'latvia')

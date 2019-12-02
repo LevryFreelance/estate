@@ -1,8 +1,9 @@
 import pymongo
 from os import environ
 
-
+# c = 'mongodb+srv://sasha_kuprii:K04u02p20r04ii@estate-q9wuv.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(environ.get('CONNECTION_STRING'))
+# client = pymongo.MongoClient(c)
 db = client.Estate
 
 

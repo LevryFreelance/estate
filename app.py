@@ -57,8 +57,6 @@ def refresh_tables():
     if latio is not None:
         db.save(latio, 'latvia')
 
-    requests.post('https://estate-lv.herokuapp.com/create_tables')
-
     print('Finished refresh')
 
 

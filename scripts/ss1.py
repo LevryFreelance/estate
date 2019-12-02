@@ -674,7 +674,7 @@ def get_links_for_archive():
     result = []
 
     for estate in LV_ESTATE:
-
+        print(estate[:2])
         url = estate[2]
 
         req = send_req(url)
@@ -685,6 +685,7 @@ def get_links_for_archive():
                    x.text != 'Visi']
 
         for district in districts:
+            print(estate[:2], district[1])
             url = district[0]
 
             req = send_req(url)
@@ -694,12 +695,12 @@ def get_links_for_archive():
                        x.text != 'Visi']
 
             for option in options:
-
+                print(estate[:2], district[1], option[1])
                 page = 1
                 all_links = []
 
                 while True:
-
+                    print(estate[:2], district[1], option[1], page)
                     link = option[0] + f'page{page}.html'
 
                     req = send_req(link)
@@ -789,8 +790,8 @@ def main():
 
 if __name__ == '__main__':
     print('Getting links...')
-    links = get_all_links()
-    # links = get_links_for_archive()
+    # links = get_all_links()
+    links = get_links_for_archive()
 
     c = 0
     for v in links:
@@ -808,5 +809,5 @@ if __name__ == '__main__':
         print('Processing...')
         parse_result = process_all_links(links)
 
-        db.save(parse_result, 'latvia')
-        # to_excel_arc(parse_result)
+        # db.save(parse_result, 'latvia')
+        to_excel_arc(parse_result)
