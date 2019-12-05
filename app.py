@@ -11,6 +11,7 @@ from controllers import db
 from scripts.ss import main as ss_controller
 from scripts.mm import main as mm_controller
 from scripts.latio import main as latio_controller
+from scripts.ss_archive import main as archive_controller
 
 
 def save_daily(df):
@@ -56,6 +57,10 @@ def refresh_tables():
     latio = latio_controller()
     if latio is not None:
         db.save(latio, 'latvia')
+
+    archive = archive_controller()
+    if archive is not None:
+        db.save(archive, 'archive')
 
     print('Finished refresh')
 
