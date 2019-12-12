@@ -127,6 +127,12 @@ def parse_one(url):
         pass
 
     try:
+        sel = html.find('li', {'class': 'last-child', 'property': 'itemListElement'}).text.strip()
+        parse_result.district = sel
+    except Exception:
+        pass
+
+    try:
         if len(parse_result.series.split()) > 1:
             parse_result.series = ' '.join(parse_result.series.split()[:-1])
         parse_result.series = format_series(parse_result.series)
@@ -212,13 +218,5 @@ def main():
 
 
 if __name__ == '__main__':
-
-    print('Collecting links...')
-    links = collect_links()
-    print('MM: ', str(len(links)), ' links')
-
-    res = process_links(links)
-
-    db.save(res, 'latvia')
-    # to_excel(res)
+    print(parse_one('https://mm.lv/dzivokli-riga-purvciems/dzivoklis-riga-purvciema-30-m-1-ist-5-stavs_i7792.html'))
 

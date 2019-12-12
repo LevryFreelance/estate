@@ -244,14 +244,14 @@ def parse_one_house(url):
 
     try:
         if 'Iela:' in opts_name:
-            street = opts[opts_name.index('Iela:')].replace('[]', '').strip()
+            street = opts[opts_name.index('Iela:')].replace('[Karte]', '').strip()
         else:
             street = None
     except Exception:
         street = None
     try:
         if 'Platība:' in opts_name:
-            area = int(opts[opts_name.index('Platība:')])
+            area = opts[opts_name.index('Platība:')]
             area = pretty_value(area)
         else:
             area = None
@@ -301,6 +301,12 @@ def parse_one_house(url):
         price_all = None
 
     try:
+        price_m2 = str(price_all / area)
+        price_m2 = float(price_m2[:price_m2.index('.') + 1])
+    except Exception:
+        price_m2 = None
+
+    try:
         date = html.select('td.msg_footer')[2].text
         date = datetime.datetime.strptime(date, 'Datums: %d.%m.%Y %H:%M')
         year, month, day = map(int, date.strftime('%Y %m %d').split())
@@ -309,7 +315,7 @@ def parse_one_house(url):
         month = datetime.datetime.now().month
         day = datetime.datetime.now().day
 
-    return Estate(year=year, month=month, day=day, district=district, street=street, volost=volost, price=price_all, area=area, room_number=room_number, ground_area=ground_area, floor_number=floor_number, kad_number=kad_number, facilities=facilities, link=url)
+    return Estate(year=year, month=month, day=day, district=district, street=street, volost=volost, price=price_all, price_m2=price_m2, area=area, room_number=room_number, ground_area=ground_area, floor_number=floor_number, kad_number=kad_number, facilities=facilities, link=url)
 
 
 def parse_one_farm(url):
@@ -795,71 +801,7 @@ def main():
 
 
 if __name__ == '__main__':
-    a = '''
-    https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/ecooi.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/concd.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/dhklf.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/ajijm.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/cxekx.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/dcink.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/dnoci.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/diiic.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/cdhje.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/dlmeg.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/dixbn.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/hxxnl.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/dgkbe.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/emlie.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/egehn.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/aaaff.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/bemlmb.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/adlgm.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/ffnlc.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/flnhn.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/affkh.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/affxn.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/bxhee.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/bmpec.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/bdpnic.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/gdhgc.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/eixmm.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/hcfll.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/adopi.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/fbidh.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/dbdge.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/fpioh.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/cnbxi.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/hxohd.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/hfhpm.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/ajfck.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/ffbfo.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/aokoi.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/aoicd.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/bnhmh.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/fgpxk.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/foocl.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/aimgx.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/glkbp.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/dlknn.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/ceoec.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/hxxjk.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/dkxci.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/conog.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/cobnf.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/cijox.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/eljhb.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/chcde.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/fhelf.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/engen.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/hbhhc.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/gciem.html
-https://www.ss.com/msg/lv/real-estate/flats/riga/imanta/ejnhd.html
-    '''
-    c = 'mongodb+srv://sasha_kuprii:K04u02p20r04ii@estate-q9wuv.mongodb.net/test?retryWrites=true&w=majority'
-    client = pymongo.MongoClient(c)
-    db = client.Estate
-    links = a.split()
-    for l in links:
-        r = parse_one_flat(l)
-        if r.floor_number is not None:
-            db.latvia.find_one_and_update({'link': l}, {'$set': {'floor_number': r.floor_number, 'count_of_floors': r.count_of_floors}})
+    # c = 'mongodb+srv://sasha_kuprii:K04u02p20r04ii@estate-q9wuv.mongodb.net/test?retryWrites=true&w=majority'
+    # client = pymongo.MongoClient(c)
+    # db = client.Estate
+    print(parse_one_house('https://www.ss.com/msg/lv/real-estate/homes-summer-residences/riga/imanta/hkdxe.html'))
