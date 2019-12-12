@@ -112,7 +112,7 @@ def parse_one_flat(url):
         area = None
     try:
         if 'Stāvs:' in opts_name:
-            floor_number, all_floors = list(map(int, opts[opts_name.index('Stāvs:')].split('/')))[:2]
+            floor_number, all_floors = list(map(int, opts[opts_name.index('Stāvs:')].split('/')[:2]))
         else:
             floor_number, all_floors = None, None
     except Exception:
@@ -196,14 +196,14 @@ def parse_one_house(url):
 
     try:
         if 'Iela:' in opts_name:
-            street = opts[opts_name.index('Iela:')].replace('[]', '').strip()
+            street = opts[opts_name.index('Iela:')].replace('[Karte]', '').strip()
         else:
             street = None
     except Exception:
         street = None
     try:
         if 'Platība:' in opts_name:
-            area = int(opts[opts_name.index('Platība:')])
+            area = opts[opts_name.index('Platība:')]
             area = pretty_value(area)
         else:
             area = None
@@ -253,6 +253,12 @@ def parse_one_house(url):
         price_all = None
 
     try:
+        price_m2 = str(price_all / area)
+        price_m2 = float(price_m2[:price_m2.index('.') + 1])
+    except Exception:
+        price_m2 = None
+
+    try:
         date = html.select('td.msg_footer')[2].text
         date = datetime.datetime.strptime(date, 'Datums: %d.%m.%Y %H:%M')
         year, month, day = map(int, date.strftime('%Y %m %d').split())
@@ -261,7 +267,7 @@ def parse_one_house(url):
         month = datetime.datetime.now().month
         day = datetime.datetime.now().day
 
-    return Estate(year=year, month=month, day=day, district=district, street=street, volost=volost, price=price_all, area=area, room_number=room_number, ground_area=ground_area, floor_number=floor_number, kad_number=kad_number, facilities=facilities, link=url)
+    return Estate(year=year, month=month, day=day, district=district, street=street, volost=volost, price=price_all, price_m2=price_m2, area=area, room_number=room_number, ground_area=ground_area, floor_number=floor_number, kad_number=kad_number, facilities=facilities, link=url)
 
 
 def parse_one_farm(url):
@@ -609,7 +615,6 @@ def parse_one_plot(url):
         day = datetime.datetime.now().day
 
     return Estate(year=year, month=month, day=day, district=district, street=street, volost=volost, price=price_all, price_m2=price_m2, purpose=purpose, area=area, link=url)
-
 
 def pretty_value(x):
     if x is not None:

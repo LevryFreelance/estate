@@ -801,7 +801,9 @@ def main():
 
 
 if __name__ == '__main__':
-    # c = 'mongodb+srv://sasha_kuprii:K04u02p20r04ii@estate-q9wuv.mongodb.net/test?retryWrites=true&w=majority'
-    # client = pymongo.MongoClient(c)
-    # db = client.Estate
-    print(parse_one_house('https://www.ss.com/msg/lv/real-estate/homes-summer-residences/riga/imanta/hkdxe.html'))
+    c = 'mongodb+srv://sasha_kuprii:K04u02p20r04ii@estate-q9wuv.mongodb.net/test?retryWrites=true&w=majority'
+    client = pymongo.MongoClient(c)
+    db = client.Estate
+
+    db.latvia.delete_many({'resource': 'ss.com', 'property_type': 'Mājas'})
+    # print(parse_one_house('https://www.ss.com/msg/lv/real-estate/homes-summer-residences/riga/imanta/hkdxe.html'))
