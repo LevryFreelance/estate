@@ -188,9 +188,11 @@ if __name__ == '__main__':
 
     links = get_all_links()
     print('Latio: ', str(len(links)), ' links')
+    links = unique(links)
+    print('Latio: ', str(len(links)), ' unique links')
+    if links:
+        print('Processing links...')
+        res = process_links(links)
 
-    print('Processing links...')
-    res = process_links(links)
-
-    # to_excel(res)
-    db.save(res, 'latvia')
+        # to_excel(res)
+        db.save(res, 'latvia')

@@ -6,6 +6,7 @@ import requests
 from bs4 import BeautifulSoup as Soup
 from dataclass.estate import Estate
 import datetime
+import time
 import pandas as pd
 import re
 from controllers import db
@@ -38,14 +39,14 @@ def collect_links_estate():
                 req = requests.get(estate[1] + '?all')
             else:
                 req = requests.get(f'{estate[1]}/{page}')
-
             html = Soup(req.text, features='html.parser')
 
-            if html.select('span.counter-search.no-results'):
+            if html.select('.no-results'):
                 break
             for x in html.select('a.link'):
                 links.add((estate[0], 'https://mm.lv' + x['href']))
                 print(f'Collecting estate links: {len(links)}')
+                print(f'{estate[1]}/{page}')
     return list(links)
 
 
@@ -57,11 +58,12 @@ def collect_links_room():
             req = requests.get(f'{room[1]}/{page}')
             html = Soup(req.text, features='html.parser')
 
-            if html.select('span.counter-search.no-results'):
+            if html.select('.no-results'):
                 break
             for x in html.select('a.link'):
                 links.add((room[0], 'https://mm.lv' + x['href']))
                 print(f'Collecting room links: {len(links)}')
+                print(f'{room[1]}/{page}')
 
     return links
 
@@ -205,7 +207,6 @@ def unique(data):
     return unique
 
 
-
 def main():
     print('Collecting links...')
     links = collect_links()
@@ -218,5 +219,4 @@ def main():
 
 
 if __name__ == '__main__':
-    print(parse_one('https://mm.lv/dzivokli-riga-purvciems/dzivoklis-riga-purvciema-30-m-1-ist-5-stavs_i7792.html'))
-
+    main()
