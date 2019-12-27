@@ -1,17 +1,25 @@
-import time
+import sys
+sys.path.append("..")
+
 
 from bs4 import BeautifulSoup
 from queue import Queue
 from requests import get
 from threading import Thread
-from dataclasses import dataclass
-from selenium.webdriver import PhantomJS
+from dataclass.estate import Estate
 
-options = PhantomJS()
+from selenium.webdriver import Firefox, FirefoxProfile, FirefoxOptions
+
+options = FirefoxOptions()
+options.set_headless(True)
+
+profile = FirefoxProfile()
+profile.set_preference('permissions.default.image', 2)
+profile.set_preference('dom.ipc.plugins.enabled.libflashplayer.so', 'false')
 
 
 def new_driver():
-    return PhantomJS()
+    return Firefox(options=options, firefox_profile=profile)
 
 
 domains = ['lv', 'ee']
@@ -50,8 +58,7 @@ def lv_get_cookies(category):
 
         driver.find_element_by_css_selector(
             '#ttContainer > .SumoSelect').click()
-        time.sleep(10)
-        driver.save_screenshot('a.png')
+
         for option in driver.find_elements_by_css_selector(
                 '#ttContainer > .SumoSelect .opt:not(.disabled)'):
             option.click()
@@ -88,31 +95,11 @@ def ee_get_cookies(category):
         driver.close()
 
 
-@dataclass
-class Item:
-    url: str
-    price: str
-    price_sqr_m: str
-    area: str
-    city: str
-    deal_type: str
-    country: str
-    resource: str
-    floor: str
-    total_floors: str
-    kad_number: str
-    ground_area: str
-    series: str
-    year: str
-    rooms: str
-    purpose: str
-
-
 def get_text(soup, selector: str) -> str:
     try:
         return soup.select_one(selector).text
     except Exception:
-        return ''
+        return
 
 
 needed_item_facts = {
@@ -180,7 +167,7 @@ def get_root_domain(domain: str):
     return domain.split('.')[-1]
 
 
-def parse_item(url: str) -> Item:
+def parse_item(url: str) -> Estate:
     soup = BeautifulSoup(get(url).text, 'html.parser')
 
     domain = get_domain(url)
@@ -191,22 +178,22 @@ def parse_item(url: str) -> Item:
         kad_number, ground_area, series, year,
         purpose, link, floor, total_floors] = list(item_generator(soup))
 
-    return Item(url if link is None else link,
-                price,
-                price_sqr_m,
-                area,
-                city,
-                deal_type,
-                {'lv': 'Latvia', 'ee': 'Estonia'}[root_domain],
-                domain[4:] if domain.startswith('www.') else domain,
-                floor,
-                total_floors,
-                kad_number,
-                ground_area,
-                series,
-                year,
-                rooms,
-                purpose)
+    return Estate(link=url if link is None else link,
+                price=price,
+                price_m2=price_sqr_m,
+                area=area,
+                city_region=city,
+                deal_type=deal_type,
+                country={'lv': 'Latvia', 'ee': 'Estonia'}[root_domain],
+                resource=domain[4:] if domain.startswith('www.') else domain,
+                floor_number=floor,
+                count_of_floors=total_floors,
+                kad_number=kad_number,
+                ground_area=ground_area,
+                series=series,
+                year=year,
+                room_number=rooms,
+                purpose=purpose)
 
 
 def worker(queue: Queue):
@@ -263,6 +250,6 @@ def item_links_generator():
                                             link)
 
 
-if __name__ == '__main__':
-    for link in item_links_generator():
-        print(parse_item(link))
+for link in item_links_generator():
+    print(link)
+    print(parse_item(link))

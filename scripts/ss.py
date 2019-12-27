@@ -786,7 +786,6 @@ def main():
     print('SS: ', str(c), ' links')
 
     links = unique(links)
-    print(links)
     c = 0
     for v in links:
         c += len(v[3])
