@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 import sys
+
+import pymongo
+
 sys.path.append("..")
 
 
 import requests
 import datetime
 from bs4 import BeautifulSoup as Soup
-import pandas as pd
 from dataclass.estate import Estate
-import time
 import re
 from controllers import db
 from controllers.format_series import format_series
@@ -20,12 +21,12 @@ _ESTATE = [('Dzīvokļi', 'Jūrmala', 'https://www.ss.com/lv/real-estate/flats/j
 
 
 def send_req(url):
-    try:
+    # try:
         return requests.get(url)
-    except Exception:
-        print('Duplicated request!', url)
-        time.sleep(1)
-        return send_req(url)
+    # except Exception:
+    #     print('Duplicated request!', url)
+    #     time.sleep(1)
+    #     return send_req(url)
 
 
 def process_all_links(data):
@@ -44,23 +45,26 @@ def process_all_links(data):
                 parse_result = parse_one_farm(link)
             if obj[0] == 'Telpas':
                 parse_result = parse_one_room(link)
-                parse_result.purpose = obj[1]
             if obj[0] == 'Biroji':
                 parse_result = parse_one_office(link)
             if obj[0] == 'Zeme':
                 parse_result = parse_one_plot(link)
 
             parse_result.deal_type = obj[2]
-            parse_result.property_type = obj[0]
+
+            if obj[0] != 'Telpas':
+                parse_result.property_type = obj[0]
+
             parse_result.series = format_series(parse_result.series)
             parse_result.country = 'LV'
             parse_result.resource = 'ss.com'
-            if not parse_result.city_region:
-                parse_result.city_region = obj[1]
+
+            if parse_result.city not in ['Rīga', 'Jūrmala']:
+                parse_result.district = None
 
             # print(len(result), parse_result.year, parse_result.month)
             result.append(parse_result.to_list())
-            print(f'Parsing... {len(result)} items')
+            # print(f'Parsing... {len(result)} items')
 
     return result
 
@@ -73,28 +77,41 @@ def parse_one_flat(url):
     opts = [x.text.strip() for x in html.select('.ads_opt')]
 
     try:
+        if 'Pilsēta, rajons:' in opts_name:
+            region = opts[opts_name.index('Pilsēta, rajons:')].replace('[Karte]', '').strip()
+        elif 'Pilsēta:' in opts_name:
+            region = opts[opts_name.index('Pilsēta:')].replace('[Karte]', '').strip()
+        else:
+            region = None
+    except Exception:
+        region = None
+
+    try:
+        if 'Pilsēta/pagasts:' in opts_name:
+            city = opts[opts_name.index('Pilsēta/pagasts:')].replace('[Karte]', '').strip()
+        elif 'Pilsēta:' in opts_name:
+            city = opts[opts_name.index('Pilsēta:')].replace('[Karte]', '').strip()
+        else:
+            city = None
+    except Exception:
+        city = None
+
+    try:
         if 'Rajons:' in opts_name:
-            district = opts[opts_name.index('Rajons:')]
+            district = opts[opts_name.index('Rajons:')].replace('[Karte]', '').strip()
         else:
             district = None
     except Exception:
         district = None
 
     try:
-        if 'Pilsēta/pagasts:' in opts_name:
-            volost = opts[opts_name.index('Pilsēta/pagasts:')]
-        else:
-            volost = None
-    except Exception:
-        volost = None
-
-    try:
         if 'Iela:' in opts_name:
-            street = opts[opts_name.index('Iela:')].replace('[Karte]', '').strip()
+            address = opts[opts_name.index('Iela:')].replace('[Karte]', '').strip()
         else:
-            street = None
+            address = None
     except Exception:
-        street = None
+        address = None
+
     try:
         if 'Istabas:' in opts_name:
             room_number = int(opts[opts_name.index('Istabas:')])
@@ -165,7 +182,7 @@ def parse_one_flat(url):
         month = datetime.datetime.now().month
         day = datetime.datetime.now().day
 
-    return Estate(year=year, month=month, day=day, district=district, street=street, volost=volost, price=price_all, price_m2=price_m2, area=area, room_number=room_number, floor_number=floor_number, count_of_floors=all_floors, kad_number=kad_number, series=series, house_type=house_type, facilities=facilities, link=str(url))
+    return Estate(year=year, month=month, day=day, region=region, city=city, district=district, address=address, price=price_all, price_m2=price_m2, area=area, room_number=room_number, floor_number=floor_number, count_of_floors=all_floors, kad_number=kad_number, series=series, house_type=house_type, facilities=facilities, link=str(url))
 
 
 def parse_one_house(url):
@@ -179,28 +196,42 @@ def parse_one_house(url):
     opts = [x.text.strip() for x in html.select('.ads_opt')]
 
     try:
+        if 'Pilsēta, rajons:' in opts_name:
+            region = opts[opts_name.index('Pilsēta, rajons:')].replace('[Karte]', '').strip()
+        elif 'Pilsēta:' in opts_name:
+            region = opts[opts_name.index('Pilsēta:')].replace('[Karte]', '').strip()
+        else:
+            region = None
+    except Exception:
+        region = None
+
+    try:
+        if 'Pilsēta/pagasts:' in opts_name:
+            city = opts[opts_name.index('Pilsēta/pagasts:')].replace('[Karte]', '').strip()
+        elif 'Pilsēta:' in opts_name:
+            city = opts[opts_name.index('Pilsēta:')].replace('[Karte]', '').strip()
+        else:
+            city = None
+    except Exception:
+        city = None
+
+    try:
         if 'Rajons:' in opts_name:
-            district = opts[opts_name.index('Rajons:')]
+            district = opts[opts_name.index('Rajons:')].replace('[Karte]', '').strip()
         else:
             district = None
     except Exception:
         district = None
 
     try:
-        if 'Pilsēta/pagasts:' in opts_name:
-            volost = opts[opts_name.index('Pilsēta/pagasts:')]
-        else:
-            volost = None
-    except Exception:
-        volost = None
-
-    try:
         if 'Iela:' in opts_name:
-            street = opts[opts_name.index('Iela:')].replace('[Karte]', '').strip()
+            address = opts[opts_name.index('Iela:')].replace('[Karte]', '').strip()
         else:
-            street = None
+            address = None
     except Exception:
-        street = None
+        address = None
+
+
     try:
         if 'Platība:' in opts_name:
             area = opts[opts_name.index('Platība:')]
@@ -267,7 +298,7 @@ def parse_one_house(url):
         month = datetime.datetime.now().month
         day = datetime.datetime.now().day
 
-    return Estate(year=year, month=month, day=day, district=district, street=street, volost=volost, price=price_all, price_m2=price_m2, area=area, room_number=room_number, ground_area=ground_area, floor_number=floor_number, kad_number=kad_number, facilities=facilities, link=url)
+    return Estate(year=year, month=month, day=day, region=region, city=city, district=district, address=address, price=price_all, price_m2=price_m2, area=area, room_number=room_number, ground_area=ground_area, floor_number=floor_number, kad_number=kad_number, facilities=facilities, link=url)
 
 
 def parse_one_farm(url):
@@ -281,28 +312,42 @@ def parse_one_farm(url):
     opts = [x.text.strip() for x in html.select('.ads_opt')]
 
     try:
+        if 'Pilsēta, rajons:' in opts_name:
+            region = opts[opts_name.index('Pilsēta, rajons:')].replace('[Karte]', '').strip()
+        elif 'Pilsēta:' in opts_name:
+            region = opts[opts_name.index('Pilsēta:')].replace('[Karte]', '').strip()
+        else:
+            region = None
+    except Exception:
+        region = None
+
+    try:
+        if 'Pilsēta/pagasts:' in opts_name:
+            city = opts[opts_name.index('Pilsēta/pagasts:')].replace('[Karte]', '').strip()
+        elif 'Pilsēta:' in opts_name:
+            city = opts[opts_name.index('Pilsēta:')].replace('[Karte]', '').strip()
+        else:
+            city = None
+    except Exception:
+        city = None
+
+    try:
         if 'Rajons:' in opts_name:
-            district = opts[opts_name.index('Rajons:')]
+            district = opts[opts_name.index('Rajons:')].replace('[Karte]', '').strip()
         else:
             district = None
     except Exception:
         district = None
 
     try:
-        if 'Pilsēta/pagasts:' in opts_name:
-            volost = opts[opts_name.index('Pilsēta/pagasts:')]
-        else:
-            volost = None
-    except Exception:
-        volost = None
-
-    try:
         if 'Ciems:' in opts_name:
-            country = opts[opts_name.index('Ciems:')].replace('[Karte]', '').strip()
+            address = opts[opts_name.index('Ciems:')].replace('[Karte]', '').strip()
         else:
-            country = None
+            address = None
     except Exception:
-        country = None
+        address = None
+
+
     try:
         if 'Platība:' in opts_name:
             area = int(opts[opts_name.index('Platība:')])
@@ -363,7 +408,7 @@ def parse_one_farm(url):
         month = datetime.datetime.now().month
         day = datetime.datetime.now().day
 
-    return Estate(year=year, month=month, day=day, district=district, volost=volost, country=country, ground_area=ground_area, price=price_all, area=area, room_number=room_number, floor_number=floor_number, kad_number=kad_number, facilities=facilities, link=url)
+    return Estate(year=year, month=month, day=day, region=region, city=city, district=district, address=address, ground_area=ground_area, price=price_all, area=area, room_number=room_number, floor_number=floor_number, kad_number=kad_number, facilities=facilities, link=url)
 
 
 def parse_one_room(url):
@@ -376,19 +421,31 @@ def parse_one_room(url):
 
     try:
         if 'Pilsēta, rajons:' in opts_name:
-            district = opts[opts_name.index('Pilsēta, rajons:')]
+            region = opts[opts_name.index('Pilsēta, rajons:')].replace('[Karte]', '').strip()
+        elif 'Pilsēta:' in opts_name:
+            region = opts[opts_name.index('Pilsēta:')].replace('[Karte]', '').strip()
+        else:
+            region = None
+    except Exception:
+        region = None
+
+    try:
+        if 'Pilsēta/pagasts:' in opts_name:
+            city = opts[opts_name.index('Pilsēta/pagasts:')].replace('[Karte]', '').strip()
+        elif 'Pilsēta:' in opts_name:
+            city = opts[opts_name.index('Pilsēta:')].replace('[Karte]', '').strip()
+        else:
+            city = None
+    except Exception:
+        city = None
+
+    try:
+        if 'Rajons:' in opts_name:
+            district = opts[opts_name.index('Rajons:')].replace('[Karte]', '').strip()
         else:
             district = None
     except Exception:
         district = None
-
-    try:
-        if 'Pilsēta/pagasts:' in opts_name:
-            volost = opts[opts_name.index('Pilsēta/pagasts:')]
-        else:
-            volost = None
-    except Exception:
-        volost = None
 
     try:
         if 'Ciems:' in opts_name:
@@ -399,7 +456,7 @@ def parse_one_room(url):
         country = None
     try:
         if 'Platība:' in opts_name:
-            area = int(opts[opts_name.index('Platība:')])
+            area = opts[opts_name.index('Platība:')]
             area = pretty_value(area)
         else:
             area = None
@@ -443,6 +500,11 @@ def parse_one_room(url):
         kad_number = None
 
     try:
+        property_type = html.select('.headtitle a')[1].text.strip()
+    except Exception:
+        property_type = None
+
+    try:
         price_sel = html.find('', {'class': 'ads_price'}).text.strip()
         price_all, price_m2 = list(map(lambda x: x.strip(), price_sel.replace('/м²', '').replace(')', '').split('(')))
         price_all = pretty_value(price_all)
@@ -459,7 +521,7 @@ def parse_one_room(url):
         month = datetime.datetime.now().month
         day = datetime.datetime.now().day
 
-    return Estate(year=year, month=month, day=day, city_region=district, volost=volost, country=country, ground_area=ground_area, price=price_all, price_m2=price_m2, area=area, room_number=room_number, floor_number=floor_number, kad_number=kad_number, facilities=facilities, link=str(url))
+    return Estate(year=year, month=month, day=day, region=region, city=city, district=district, country=country, property_type=property_type, ground_area=ground_area, price=price_all, price_m2=price_m2, area=area, room_number=room_number, floor_number=floor_number, kad_number=kad_number, facilities=facilities, link=str(url))
 
 
 def parse_one_office(url):
@@ -471,28 +533,41 @@ def parse_one_office(url):
     opts = [x.text.strip() for x in html.select('.ads_opt')]
 
     try:
+        if 'Pilsēta, rajons:' in opts_name:
+            region = opts[opts_name.index('Pilsēta, rajons:')].replace('[Karte]', '').strip()
+        elif 'Pilsēta:' in opts_name:
+            region = opts[opts_name.index('Pilsēta:')].replace('[Karte]', '').strip()
+        else:
+            region = None
+    except Exception:
+        region = None
+
+    try:
+        if 'Pilsēta/pagasts:' in opts_name:
+            city = opts[opts_name.index('Pilsēta/pagasts:')].replace('[Karte]', '').strip()
+        elif 'Pilsēta:' in opts_name:
+            city = opts[opts_name.index('Pilsēta:')].replace('[Karte]', '').strip()
+        else:
+            city = None
+    except Exception:
+        city = None
+
+    try:
         if 'Rajons:' in opts_name:
-            district = opts[opts_name.index('Rajons:')]
+            district = opts[opts_name.index('Rajons:')].replace('[Karte]', '').strip()
         else:
             district = None
     except Exception:
         district = None
 
     try:
-        if 'Pilsēta/pagasts:' in opts_name:
-            volost = opts[opts_name.index('Pilsēta/pagasts:')]
-        else:
-            volost = None
-    except Exception:
-        volost = None
-
-    try:
         if 'Iela:' in opts_name:
-            street = opts[opts_name.index('Iela:')].replace('[Karte]', '').strip()
+            address = opts[opts_name.index('Iela:')].replace('[Karte]', '').strip()
         else:
-            street = None
+            address = None
     except Exception:
-        street = None
+        address = None
+
     try:
         if 'Istabas:' in opts_name:
             room_number = int(opts[opts_name.index('Istabas:')])
@@ -502,7 +577,7 @@ def parse_one_office(url):
         room_number = None
     try:
         if 'Platība:' in opts_name:
-            area = int(opts[opts_name.index('Platība:')])
+            area = opts[opts_name.index('Platība:')]
             area = pretty_value(area)
         else:
             area = None
@@ -547,7 +622,7 @@ def parse_one_office(url):
         month = datetime.datetime.now().month
         day = datetime.datetime.now().day
 
-    return Estate(year=year, month=month, day=day, district=district, street=street, volost=volost, price=price_all, price_m2=price_m2, area=area, room_number=room_number, floor_number=floor_number, count_of_floors=all_floors, kad_number=kad_number, facilities=facilities, link=url)
+    return Estate(year=year, month=month, day=day, region=region, city=city, district=district, address=address, price=price_all, price_m2=price_m2, area=area, room_number=room_number, floor_number=floor_number, count_of_floors=all_floors, kad_number=kad_number, facilities=facilities, link=url)
 
 
 def parse_one_plot(url):
@@ -559,31 +634,45 @@ def parse_one_plot(url):
     opts = [x.text.strip() for x in html.select('.ads_opt')]
 
     try:
+        if 'Pilsēta, rajons:' in opts_name:
+            region = opts[opts_name.index('Pilsēta, rajons:')].replace('[Karte]', '').strip()
+        elif 'Pilsēta:' in opts_name:
+            region = opts[opts_name.index('Pilsēta:')].replace('[Karte]', '').strip()
+        else:
+            region = None
+    except Exception:
+        region = None
+
+    try:
+        if 'Pilsēta/pagasts:' in opts_name:
+            city = opts[opts_name.index('Pilsēta/pagasts:')].replace('[Karte]', '').strip()
+        elif 'Pilsēta:' in opts_name:
+            city = opts[opts_name.index('Pilsēta:')].replace('[Karte]', '').strip()
+        else:
+            city = None
+    except Exception:
+        city = None
+
+    try:
         if 'Rajons:' in opts_name:
-            district = opts[opts_name.index('Rajons:')]
+            district = opts[opts_name.index('Rajons:')].replace('[Karte]', '').strip()
         else:
             district = None
     except Exception:
         district = None
 
     try:
-        if 'Pilsēta/pagasts:' in opts_name:
-            volost = opts[opts_name.index('Pilsēta/pagasts:')]
+        if 'Iela:' in opts_name:
+            address = opts[opts_name.index('Iela:')].replace('[Karte]', '').strip()
         else:
-            volost = None
+            address = None
     except Exception:
-        volost = None
+        address = None
+
 
     try:
-        if 'Iela:' in opts_name:
-            street = opts[opts_name.index('Iela:')].replace('[Karte]', '').strip()
-        else:
-            street = None
-    except Exception:
-        street = None
-    try:
         if 'Platība:' in opts_name:
-            area = int(opts[opts_name.index('Platība:')])
+            area = opts[opts_name.index('Platība:')]
             area = pretty_value(area)
         else:
             area = None
@@ -614,7 +703,8 @@ def parse_one_plot(url):
         month = datetime.datetime.now().month
         day = datetime.datetime.now().day
 
-    return Estate(year=year, month=month, day=day, district=district, street=street, volost=volost, price=price_all, price_m2=price_m2, purpose=purpose, area=area, link=url)
+    return Estate(year=year, month=month, day=day, region=region, city=city, district=district, address=address, price=price_all, price_m2=price_m2, purpose=purpose, area=area, link=url)
+
 
 def pretty_value(x):
     if x is not None:
@@ -623,7 +713,10 @@ def pretty_value(x):
                 p = int(re.search('[\d .]*', str(x)).group().replace(' ', ''))
             else:
                 p = float(re.search('[\d .]*', str(x)).group().replace(' ', ''))
-            return p
+            if 'ha' in x:
+                return round(p * 10000, 2)
+            else:
+                return round(p, 2)
         else:
             return None
     else:
@@ -683,7 +776,7 @@ def get_links_for_archive():
                 c = 0
                 for x in result:
                     c += len(x[3])
-                print(f'Collecting links... {c}')
+                # print(f'Collecting links... {c}')
 
                 # if result[-1][0] == 'Mājas':
                 #     return result
@@ -734,44 +827,24 @@ def main():
     c = 0
     for v in links:
         c += len(v[3])
-    print('SS: ', str(c), ' links')
+    print('SS archive: ', str(c), ' links')
 
     links = unique(links)
     # print(links)
     c = 0
     for v in links:
         c += len(v[3])
-    print('SS: ', str(c), ' unique links')
+    print('SS archive: ', str(c), ' unique links')
 
     if links:
         print('Processing...')
         parse_result = process_all_links(links)
 
-        db.save(parse_result, 'archive')
+        return parse_result
+        # db.save(parse_result, 'archive')
         # to_excel_arc(parse_result)
 
 
 if __name__ == '__main__':
+
     main()
-    # print('Getting links...')
-    # # links = get_all_links()
-    # links = get_links_for_archive()
-    #
-    # c = 0
-    # for v in links:
-    #     c += len(v[3])
-    # print('SS: ', str(c), ' links')
-    #
-    # # links = unique(links)
-    # # print(links)
-    # c = 0
-    # for v in links:
-    #     c += len(v[3])
-    # print('SS: ', str(c), ' unique links')
-    #
-    # if links:
-    #     print('Processing...')
-    #     parse_result = process_all_links(links)
-    #
-    #     # db.save(parse_result, 'latvia')
-    #     to_excel_arc(parse_result)

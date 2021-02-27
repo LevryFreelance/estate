@@ -1,0 +1,445 @@
+1614351676523	geckodriver	INFO	Listening on 127.0.0.1:53457
+1614351679538	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofile9EO2BJ"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614351683913	Marionette	INFO	Listening on port 53467
+1614351684047	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x5B000D,name=PHttpChannel::Msg___delete__) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1614352870074	Marionette	INFO	Stopped listening on port 53467
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1614352873297	geckodriver	INFO	Listening on 127.0.0.1:55113
+1614352876385	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofilebJ2qO2"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614352879635	Marionette	INFO	Listening on port 55124
+1614352879746	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1614353662686	geckodriver	INFO	Listening on 127.0.0.1:56142
+1614353665735	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofilezXmX1m"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614353668166	Marionette	INFO	Listening on port 56150
+1614353668529	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1614355556277	geckodriver	INFO	Listening on 127.0.0.1:59191
+1614355559298	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileh0pDMD"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614355562833	Marionette	INFO	Listening on port 59201
+1614355563259	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:59392
+1614355703311	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileAFfepf"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614355706449	Marionette	INFO	Listening on port 59402
+1614355706652	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1614356526348	geckodriver	INFO	Listening on 127.0.0.1:60495
+1614356529378	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileHBJlE5"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614356533659	Marionette	INFO	Listening on port 60506
+1614356533815	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:60598
+1614356680941	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileHDKSd7"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614356683613	Marionette	INFO	Listening on port 60609
+1614356683776	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1614357499948	geckodriver	INFO	Listening on 127.0.0.1:61656
+1614357502900	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileL8NrPN"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614357507199	Marionette	INFO	Listening on port 61664
+1614357507393	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+Exiting due to channel error.
+Listening on 127.0.0.1:63182
+1614364470457	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofilerAz7nJ"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614364474891	Marionette	INFO	Listening on port 63193
+1614364475058	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:63490
+1614364716275	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofilekjgE32"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614364720450	Marionette	INFO	Listening on port 63499
+1614364720663	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+Exiting due to channel error.
+::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileEAaibA"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614364776288	Marionette	INFO	Listening on port 63589
+1614364776828	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:63683
+1614364857927	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileMHGesz"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614364862198	Marionette	INFO	Listening on port 63691
+1614364862486	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:63785
+1614364906855	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofilePRXPFj"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614364910712	Marionette	INFO	Listening on port 63795
+1614364911865	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:63919
+1614364984407	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofile2ZvvPR"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614364994887	Marionette	INFO	Listening on port 63929
+1614364995319	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+Exiting due to channel error.
+::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileP2H2IJ"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614365226947	Marionette	INFO	Listening on port 64075
+1614365227637	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:64160
+1614365292672	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileH7Mz7a"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614365307001	Marionette	INFO	Listening on port 64173
+1614365311916	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+Exiting due to channel error.
+::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileQEYv3V"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614365398139	Marionette	INFO	Listening on port 64297
+[Parent 15696, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1614365401918	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:64411
+1614365455177	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileabLJIM"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614365461922	Marionette	INFO	Listening on port 64421
+1614365462944	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:64497
+1614365539144	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofile6o1mnj"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+JavaScript error: , line 0: uncaught exception: Object
+1614365548693	Marionette	INFO	Listening on port 64505
+1614365549361	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1614367180469	geckodriver	INFO	Listening on 127.0.0.1:50752
+1614367183409	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofilevyz9Ma"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614367200329	Marionette	INFO	Listening on port 50760
+1614367201815	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+[Parent 15260, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1614368318970	geckodriver	INFO	Listening on 127.0.0.1:52211
+1614368321778	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofilet8s2oG"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614368332412	Marionette	INFO	Listening on port 52219
+1614368332629	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 14740, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1614369467148	geckodriver	INFO	Listening on 127.0.0.1:52912
+1614369470091	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileNhh6dN"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614369484508	Marionette	INFO	Listening on port 52922
+1614369485113	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:52965
+1614369490163	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileDanhkq"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614369497163	Marionette	INFO	Listening on port 52977
+1614369497538	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:53225
+1614370010719	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileFCM7bf"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614370026505	Marionette	INFO	Listening on port 53233
+1614370027710	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:53307
+1614370070938	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileorrni1"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614370084480	Marionette	INFO	Listening on port 53315
+1614370085273	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:53354
+1614370093540	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofilepiOBOy"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614370106823	Marionette	INFO	Listening on port 53380
+1614370107287	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+Exiting due to channel error.
+::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileIRMbxs"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614370177528	Marionette	INFO	Listening on port 53485
+1614370181997	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:53523
+1614370194126	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileAO6jKd"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614370204858	Marionette	INFO	Listening on port 53540
+1614370205185	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1614371465385	geckodriver	INFO	Listening on 127.0.0.1:54109
+1614371468066	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileI1PrG1"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614371502268	Marionette	INFO	Listening on port 54119
+[Parent 20680, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1614371504667	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:54185
+1614371518712	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileYyeoYl"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614371539646	Marionette	INFO	Listening on port 54201
+1614371540209	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1614372826441	geckodriver	INFO	Listening on 127.0.0.1:54682
+1614372829276	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileKnntkt"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614372851533	Marionette	INFO	Listening on port 54690
+1614372852912	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+Exiting due to channel error.
+::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileLzzrjI"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614372880494	Marionette	INFO	Listening on port 54761
+1614372880917	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 22188, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1614373729092	geckodriver	INFO	Listening on 127.0.0.1:55115
+1614373731803	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofilebvYVsI"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614373762579	Marionette	INFO	Listening on port 55123
+1614373764465	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 22784, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:55322
+1614374095275	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileFQsqtY"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614374124588	Marionette	INFO	Listening on port 55331
+1614374127261	Marionette	WARN	TLS certificate errors will be ignored for this session
+1614374167747	geckodriver	INFO	Listening on 127.0.0.1:55390
+1614374170784	mozrunner::runner	INFO	Running command: "C:\\ProgJavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+te" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofilevouTTV"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614374190496	Marionette	INFO	Listening on port 55432
+1614374190871	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:55571
+1614374443252	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileYh56Ky"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614374476848	Marionette	INFO	Listening on port 55579
+1614374478280	Marionette	WARN	TLS certificate errors will be ignored for this session
+1614374522421	geckodriver	INFO	Listening on 127.0.0.1:55670
+1614374525197	mozrunner::runner	INFO	Running command: "C:\\ProgJavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+te" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofilef3BdGD"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614374536567	Marionette	INFO	Listening on port 55697
+1614374537009	Marionette	WARN	TLS certificate errors will be ignored for this session
+uncaught exception: out of memory
+Hit MOZ_CRASH([unhandlable oom] js::wasm::Init) at /builds/worker/checkouts/gecko/js/src/vm/JSContext.cpp:1185
+1614375372884	geckodriver	INFO	Listening on 127.0.0.1:56056
+1614375375470	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileUgT46W"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.error: "Could not load engine google@search.mozilla.org: out of memory"
+JavaScript error: resource:///modules/BrowserGlue.jsm, line 2478: uncaught exception: out of memory
+console.error: "out of memory"
+console.error: "Could not load engine wikipedia@search.mozilla.org: out of memory"
+Hit MOZ_CRASH([unhandlable oom] Irregexp NewByteArray) at /builds/worker/checkouts/gecko/js/src/vm/JSContext.cpp:1185
+1614413181463	geckodriver	INFO	Listening on 127.0.0.1:50228
+1614413185552	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileLtaBml"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614413190897	Marionette	INFO	Listening on port 50237
+1614413191251	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:50268
+1614413194634	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofiletwxaPQ"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614413197777	Marionette	INFO	Listening on port 50285
+1614413197868	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:50324
+1614413220612	geckodriver	INFO	Listening on 127.0.0.1:50353
+1614413223656	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileWeynrk"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614413227736	Marionette	INFO	Listening on port 50364
+1614413228006	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:50394
+1614413231553	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileoHuMbR"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614413234226	Marionette	INFO	Listening on port 50412
+1614413234337	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:50448
+1614414818513	geckodriver	INFO	Listening on 127.0.0.1:50854
+1614414821413	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileZkBXhI"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614414826256	Marionette	INFO	Listening on port 50864
+1614414826665	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1614416171105	geckodriver	INFO	Listening on 127.0.0.1:52761
+1614416174043	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofilemJdqmh"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614416178825	Marionette	INFO	Listening on port 52769
+1614416179018	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1614417771142	geckodriver	INFO	Listening on 127.0.0.1:54005
+1614417774102	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileM1dNef"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614417778541	Marionette	INFO	Listening on port 54013
+1614417778634	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1614418716795	geckodriver	INFO	Listening on 127.0.0.1:55438
+1614418719737	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileHOydQb"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614418724081	Marionette	INFO	Listening on port 55446
+1614418724139	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1614419905861	geckodriver	INFO	Listening on 127.0.0.1:56079
+1614419908796	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofilelkEs6N"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614419917391	Marionette	INFO	Listening on port 56089
+1614419918039	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:56270
+1614420025181	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofileMHyFQF"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614420028350	Marionette	INFO	Listening on port 56278
+1614420028922	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1614423400834	geckodriver	INFO	Listening on 127.0.0.1:60337
+1614423403858	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\1\\AppData\\Local\\Temp\\rust_mozprofile2zXt0w"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614423424858	Marionette	INFO	Listening on port 60345
+1614423425243	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE

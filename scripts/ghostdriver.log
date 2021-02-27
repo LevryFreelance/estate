@@ -1,7 +1,131 @@
-[INFO  - 2019-12-17T18:33:08.257Z] GhostDriver - Main - running on port 50231
-[INFO  - 2019-12-17T18:33:08.758Z] Session [ac487010-20fb-11ea-9418-53541a323480] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
-[INFO  - 2019-12-17T18:33:08.758Z] Session [ac487010-20fb-11ea-9418-53541a323480] - page.customHeaders:  - {}
-[INFO  - 2019-12-17T18:33:08.758Z] Session [ac487010-20fb-11ea-9418-53541a323480] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
-[INFO  - 2019-12-17T18:33:08.758Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: ac487010-20fb-11ea-9418-53541a323480
-[INFO  - 2019-12-17T18:38:08.263Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-12-17T18:43:08.323Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2020-03-19T11:10:01.268Z] GhostDriver - Main - running on port 62526
+[INFO  - 2020-03-19T11:10:01.511Z] Session [2d778e40-69d2-11ea-a271-81cc62dc4e3d] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2020-03-19T11:10:01.535Z] Session [2d778e40-69d2-11ea-a271-81cc62dc4e3d] - page.customHeaders:  - {}
+[INFO  - 2020-03-19T11:10:01.535Z] Session [2d778e40-69d2-11ea-a271-81cc62dc4e3d] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2020-03-19T11:10:01.535Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 2d778e40-69d2-11ea-a271-81cc62dc4e3d
+[ERROR - 2020-03-19T11:11:34.652Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584616294630
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:12:23.053Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584616343033
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:12:33.540Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584616353520
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:13:17.673Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584616397651
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:13:21.673Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584616401654
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:13:27.053Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584616407039
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:13:46.917Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584616426899
+
+  phantomjs://platform/console++.js:263 in error
+[INFO  - 2020-03-19T11:15:01.278Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[ERROR - 2020-03-19T11:15:28.203Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584616528180
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:15:57.155Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584616557133
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:16:04.047Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584616564016
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:16:44.480Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584616604463
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:19:27.972Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584616767947
+
+  phantomjs://platform/console++.js:263 in error
+[INFO  - 2020-03-19T11:20:01.287Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[ERROR - 2020-03-19T11:21:26.846Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584616886829
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:21:35.479Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584616895443
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:21:56.612Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584616916596
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:22:01.604Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584616921583
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:22:13.093Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584616933065
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:23:24.896Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584617004876
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:24:38.661Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584617078639
+
+  phantomjs://platform/console++.js:263 in error
+[INFO  - 2020-03-19T11:25:01.299Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[ERROR - 2020-03-19T11:26:52.108Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584617212083
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:28:35.947Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584617315928
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:28:40.638Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584617320622
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:28:54.289Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584617334267
+
+  phantomjs://platform/console++.js:263 in error
+[INFO  - 2020-03-19T11:30:01.313Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[ERROR - 2020-03-19T11:30:21.276Z] Session [2d778e40-69d2-11ea-a271-81cc62dc4e3d] - page.onError - msg: TypeError: undefined is not an object (evaluating 'mail.match')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:30:21.290Z] Session [2d778e40-69d2-11ea-a271-81cc62dc4e3d] - page.onError - stack:
+  getSenderName (https://mm.lv/dzivokli-daugavpils-centrs/dzivoklis-daugavpili-centra-3-stavs_i38701.html:111)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:30:23.728Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584617423710
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:31:01.961Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584617461933
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:32:14.211Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584617534192
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:33:03.107Z] Session [2d778e40-69d2-11ea-a271-81cc62dc4e3d] - page.onError - msg: TypeError: undefined is not an object (evaluating 'mail.match')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:33:03.122Z] Session [2d778e40-69d2-11ea-a271-81cc62dc4e3d] - page.onError - stack:
+  getSenderName (https://mm.lv/zeme-ventspils-un-rajons/zeme-privatapbuvei_i45454.html:111)
+
+  phantomjs://platform/console++.js:263 in error
+[INFO  - 2020-03-19T11:35:01.332Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[ERROR - 2020-03-19T11:35:31.524Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584617731507
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:36:01.623Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584617761600
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:36:17.534Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584617777512
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:36:40.025Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584617799997
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:37:12.375Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584617832345
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:38:18.333Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584617898317
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:39:45.276Z] Session [2d778e40-69d2-11ea-a271-81cc62dc4e3d] - page.onError - msg: TypeError: undefined is not an object (evaluating 'mail.match')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-19T11:39:45.286Z] Session [2d778e40-69d2-11ea-a271-81cc62dc4e3d] - page.onError - stack:
+  getSenderName (https://mm.lv/dzivokli-liepaja-un-rajons/dzivoklis-liepaja-2-ist_i38727.html:115)
+
+  phantomjs://platform/console++.js:263 in error
+[INFO  - 2020-03-19T11:40:01.342Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[ERROR - 2020-03-19T11:40:35.309Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1584618035289
+
+  phantomjs://platform/console++.js:263 in error
